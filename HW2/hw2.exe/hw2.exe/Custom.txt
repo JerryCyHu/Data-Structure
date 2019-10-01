@@ -1,0 +1,13 @@
+Player Name              Team              Goals  Assists  Penalties
+Andrew_Miller            Yale                 14       19          5
+Greg_Carey               St._Lawrence         20       13         13
+Matt_Lorito              Brown                17       14          2
+Andrew_Calof             Princeton            12       17          7
+Tyler_Sikura             Dartmouth             9       16          5
+Greg_Miller              Cornell              10       14          2
+Wayne_Simpson            Union                11       11          5
+Matt_Neal                Rensselaer            5       15          0
+Kellen_Jones             Quinnipiac           12        7          7
+Tylor_Spink              Colgate               8       10          4
+Jarrett_Burton           Clarkson              8        8          8
+Brian_Hart               Harvard               3       11          2

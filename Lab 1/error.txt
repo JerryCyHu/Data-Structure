@@ -1,0 +1,29 @@
+quadratic.cpp: In function ‘bool find_roots(int, int, int, float&, float&)’:
+quadratic.cpp:30:29: error: ‘radikal’ was not declared in this scope
+   float sqrt_radical = sqrt(radikal);
+                             ^~~~~~~
+quadratic.cpp:30:29: note: suggested alternative: ‘radical’
+   float sqrt_radical = sqrt(radikal);
+                             ^~~~~~~
+                             radical
+quadratic.cpp:32:3: error: ‘root_1’ was not declared in this scope
+   root_1 = (-b + sqrt_radical) / 2*a;
+   ^~~~~~
+quadratic.cpp:32:3: note: suggested alternative: ‘root_pos’
+   root_1 = (-b + sqrt_radical) / 2*a;
+   ^~~~~~
+   root_pos
+quadratic.cpp:33:3: error: ‘root_2’ was not declared in this scope
+   root_2 = (-b - sqrt_radical) / 2*a;
+   ^~~~~~
+quadratic.cpp:33:3: note: suggested alternative: ‘root_pos’
+   root_2 = (-b - sqrt_radical) / 2*a;
+   ^~~~~~
+   root_pos
+quadratic.cpp: In function ‘int main()’:
+quadratic.cpp:50:82: error: expected ‘)’ before ‘{’ token
+     if (check_root(my_a,my_b,my_c, root_1) && check_root(my_a,my_b,my_c, root_2) {
+                                                                                  ^
+quadratic.cpp:59:3: error: expected primary-expression before ‘}’ token
+   }
+   ^

@@ -1,0 +1,6 @@
+﻿  test_vec.cpp
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\Lab 4\vec.h(36,2): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\Lab 4\vec.h(32): message :  while compiling class template member function 'void Vec<int>::print(void)'
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\Lab 4\test_vec.cpp(67): message :  see reference to function template instantiation 'void Vec<int>::print(void)' being compiled
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\Lab 4\test_vec.cpp(11): message :  see reference to class template instantiation 'Vec<int>' being compiled
+  lab4.vcxproj -> C:\Users\huc3\Documents\CSCI 1200\DATA Structure\Lab 4\lab4\Debug\lab4.exe

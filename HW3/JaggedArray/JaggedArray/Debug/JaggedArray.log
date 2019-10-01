@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\JaggedArray\main.cpp(218,30): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\JaggedArray\main.cpp(220,32): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\JaggedArray\main.cpp(240,30): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\JaggedArray\main.cpp(242,32): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\JaggedArray\main.cpp(323,30): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\JaggedArray\main.cpp(325,32): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\JaggedArray\jagged_array.h(77): warning C4715:  'JaggedArray<char>::returnoffsets': not all control paths return a value
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\JaggedArray\jagged_array.h(84): warning C4715:  'JaggedArray<char>::returnpackedvalue': not all control paths return a value
+  JaggedArray.vcxproj -> C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW3\JaggedArray\Debug\JaggedArray.exe

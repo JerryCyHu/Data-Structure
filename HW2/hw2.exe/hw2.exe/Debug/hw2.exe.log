@@ -1,0 +1,33 @@
+﻿  hw2.exe.cpp
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(89,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(191,30): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(194,30): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(197,42): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(200,44): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(203,46): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(244,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(253,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(258,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(269,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(276,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(303,36): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(415,51): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(423,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(433,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(443,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(458,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(468,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(511,30): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(514,30): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(517,42): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(520,44): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(523,46): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(565,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(574,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(579,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(590,21): warning C4018:  '<=': signed/unsigned mismatch
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(597,21): warning C4018:  '<=': signed/unsigned mismatch
+  playerData.cpp
+  Generating Code...
+C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\hw2.exe\hw2.exe.cpp(618,6): warning C4101:  'longestSchoolName': unreferenced local variable
+  hw2.exe.vcxproj -> C:\Users\huc3\Documents\CSCI 1200\DATA Structure\HW2\hw2.exe\Debug\hw2.exe.exe

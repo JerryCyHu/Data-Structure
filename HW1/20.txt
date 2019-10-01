@@ -1,0 +1,51 @@
+---------------------------
+|        HOMEWORK 1: TEXT |
+|   JUSTIFICATION NAME: < |
+|              Jerry Hu > |
+| COLLABORATORS AND OTHER |
+|     RESOURCES: List the |
+|   names of everyone you |
+|    talked to about this |
+| assignment (classmates, |
+|       TAs, ALAC tutors, |
+|          upperclassmen, |
+| students/instructor via |
+|  LMS, etc.), and all of |
+|   the resources (books, |
+|        online reference |
+|     material, etc.) you |
+| consulted in completing |
+|      this assignment. < |
+| https://blog.csdn.net/- |
+| bichenggui/article/det- |
+|            ails/4600153 |
+| https://stackoverflow.- |
+| com/questions/22873898- |
+| /c-inserting-a-line-at- |
+| -specific-point-in-file |
+| http://www.cplusplus.c- |
+| om/reference/fstream/o- |
+|       fstream/ofstream/ |
+| https://blog.csdn.net/- |
+| mmyaoduli/article/deta- |
+|          ils/51123735 > |
+|          Remember: Your |
+| implementation for this |
+| assignment must be done |
+|         on your own, as |
+|  described in "Academic |
+| Integrity for Homework" |
+|  handout. ESTIMATE OF # |
+|  OF HOURS SPENT ON THIS |
+|   ASSIGNMENT: <8> EXTRA |
+| CREDIT SHAPES: Describe |
+|        your new shapes, |
+|   include example files |
+| of the output with your |
+| submission, and provide |
+|   the command line used |
+|     to create the these |
+|         examples. MISC. |
+|   COMMENTS TO GRADER: I |
+|                love DS! |
+---------------------------
