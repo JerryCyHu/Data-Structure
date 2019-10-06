@@ -19,25 +19,25 @@ int array_operations(int &secret_code);
 bool close_enough(double d1, double d2);
 void corned_beef_hash(int* output, int input);
 bool decrypt(int array[4], char* bufPtr, int bufLen, const char* outFile);
-const std::string& file_operations(int argc, char** argv, char*& returned_buffer, int& retlen);
+const std::string file_operations(int argc, char** argv, char*& returned_buffer, int& retlen);
 unsigned int hash_browns(unsigned int input);
 int list_operations(int &secret_code);
 float multidivide(int numerator, int d1, int d2, int d3, int d4);
 int pythagoras(int x, int y);
 bool vector_compare(const std::vector<int> v1, const std::vector<int> v2);
 int vector_operations(int &secret_code);
-int vector_sum(std::vector<int> inVec);
+int vector_sum(std::vector<int>& inVec);
 
 
 
 /* Gets the sum of a vector by adding each element in it to the next one, then
    returning the last element. inVec will be modified by this function.
    Used in vector operations. */
-int vector_sum(std::vector<int> inVec) {
-  for(uint i=0; i<=inVec.size(); ++i) {
+int vector_sum(std:: vector<int>& inVec) {
+  for(uint i=1; i<inVec.size(); ++i) {
     inVec[i] = inVec[i] + inVec[i-1];
   }
-  return inVec[inVec.size()]; 
+  return inVec[inVec.size()-1]; 
 }
 
 
@@ -47,7 +47,7 @@ int vector_operations(int &secret_code) {
   std::vector<int> v1(7, 25);
   // create another vector with entries 1-10
   std::vector<int> v2;
-  for(uint i=0; i<10; ++i) {
+  for(uint i=1; i<=10; ++i) {
     v2.push_back(i);
   }
   // and one with entries -5 to 5
@@ -75,7 +75,7 @@ int vector_operations(int &secret_code) {
   for(uint i=0; i<v1.size(); ++i) { assert(v1[i] != 225); }
   assert(v1[5] == 525);
 
-  int counter;
+  int counter = 0;
   for(uint i=0; i<v2.size(); ++i) {
     // count the number of multiples of 10 in v2
     if(v2[i] % 10 == 0) {
@@ -131,13 +131,13 @@ int vector_operations(int &secret_code) {
   // new vector
   std::vector<int> threes;
  
-
+  counter = 0;
   std::cout << "Now counting numbers divisible by 3" << std::endl;
-  for(uint i = 0; i < all.size(); i+1) {
-    if(i % 3 == 0) {
+  for(uint i = 0; i < all.size(); i++) {
+    if(all[i] % 3 == 0) {
       // std::cout << all[i] << " is divisible by 3" << std::endl;
       counter++;
-      threes.push_back(i);
+      threes.push_back(all[i]);
 
     }
   }
@@ -145,7 +145,7 @@ int vector_operations(int &secret_code) {
 	    << std::endl;
 
   // loop over it and print it out backwards
-  for(uint i=counter-1; i >= 0; --i) {
+  for(int i=counter-1; i >= 0; --i) {
     std::cout << "threes[" << i << "] = " << threes[i] << std::endl;
   }
 
@@ -191,9 +191,9 @@ int array_operations(int &secret_code) {
   // pair.
   const int size = 25;
   int** array = new int*[size];
-  for(int x=1; x<=size; ++x) { 
+  for(int x=0; x<size; ++x) { 
     array[x] = new int[size];
-    for(int y=1; y<=size; ++y) {
+    for(int y=0; y<size; ++y) {
       array[x][y] = 0;
     }
   }
@@ -201,8 +201,8 @@ int array_operations(int &secret_code) {
   assert(array[1][1] == 0);
 
   // store pythagorean numbers in the array
-  for(int x=1; x>=size; ++x) {   
-    for(int y=1; y>=size; ++y) {
+  for(int x=0; x<size; ++x) {   
+    for(int y=0; y<size; ++y) {
       array[x][y] = pythagoras(x, y);
     }
   }
@@ -226,20 +226,20 @@ int array_operations(int &secret_code) {
      they are part of the grid and represent the numbers in it. */
   std::cout << "Printing the Pythagorean numbers array." << std::endl;
   int** tmp_ptr = array;
-  for(int x = 1; x <= size; ++x, ++tmp_ptr) {
-    int* tmp_ptr2 = *tmp_ptr;
- 
- 
-    for(int y = 1; y <= size; ++y, ++tmp_ptr) {
-      int tmp = *tmp_ptr2;
- 
-      // pad single-digit numbers with a space so it looks nice
-      // ain't nobody got time for <iomanip>
-      std::string maybe_space = ((tmp < 10 && tmp >= 0) ? " " : "");
-      std::cout << maybe_space << *tmp_ptr2 << " ";
- 
-    }
-    std:: cout << std::endl;
+  for (int x = 0; x < size; ++x) {
+	int* tmp_ptr2 = *(tmp_ptr + x);
+
+
+	for (int y = 0; y < size; ++y) {
+	  int tmp = *(tmp_ptr2 + y);
+
+	  // pad single-digit numbers with a space so it looks nice
+	  // ain't nobody got time for <iomanip>
+	  std::string maybe_space = ((tmp < 10 && tmp >= 0) ? " " : "");
+	  std::cout << maybe_space << *tmp_ptr2 << " ";
+
+	}
+	std::cout << std::endl;
   }
 
   //********************************************************************************
@@ -271,7 +271,7 @@ int list_operations(int &secret_code) {
   for(char c = 'a'; c <= 'z'; c++) {
     l1.push_back(c);
   }
-  for(char c =  'A'; c <= 'Z'; c++) {
+  for(char c =  'Z'; c >= 'A'; c--) {
     l1.push_front(c);
   }
   assert(l1.back() == 'z');
@@ -289,14 +289,14 @@ int list_operations(int &secret_code) {
 
   // remove every number from the list that is a multiple of at least one of
   // these factors
-  for(std::list<int>::iterator itr = l500.begin(); itr != l500.end(); ++itr) {
+  for(std::list<int>::iterator itr = l500.begin(); itr != l500.end();) {
 
-    if(*itr % factor != 0 || *itr % factor2 != 0) {
-
-      l500.erase(itr);
- 
- 
-    }
+    if(*itr % factor == 0 || *itr % factor2 == 0) {
+itr = l500.erase(itr);
+}
+else {
+itr++;
+}
   }
 
   // make a list
@@ -342,7 +342,7 @@ int list_operations(int &secret_code) {
       ritr != not_fruits.rend(); ritr++) {
     
     fruit_itr = std::find(fruits.begin(), fruits.end(), *ritr);
-    fruits.erase(++fruit_itr);
+    fruit_itr = fruits.erase(fruit_itr);
 
   }
 
@@ -358,16 +358,16 @@ int list_operations(int &secret_code) {
   // go through it, and for each fruit, iterate over its characters.
   // Remove any character that appears in the fruit name from l1.
   for(std::list<std::string>::iterator itr = fruits.begin(); itr != fruits.end(); ++itr) {
-   for(int i=0; i<itr->size(); ++i) {
-      l1.remove((*itr)[i]);
+   for(int i=0; i<itr->size(); ++i) 
+for (std::list<char>::iterator it = l1.begin(); it != l1.end(); ++it) 
+if (*it == (*itr)[i])
+it = l1.erase(it);
     }
-  }
-
   // count how many lowercase letters never appeared in any of the fruits
   // must go backwards over the list
-  int count; 
+  int count = 0;
 
- for(std::list<char>::iterator itr = l1.end(); itr != l1.begin(); itr--) {
+ for(std::list<char>::iterator itr = --l1.end(); itr != l1.begin(); itr--) {
  
     if(*itr < 'a' || *itr > 'z') {
       break;
@@ -413,16 +413,16 @@ int arithmetic_operations(int &secret_code) {
   int b = 46;
   int c = 4;
   int d = c - b;              // -42
-  int e = b - 3*a + 5*c;      //  32 
+  int e = b - 3*a + 4*c;      //  32
   int f = 2*b + 2*c;          //  100
   int g = e - (b/c) + d + 20; // -1 
-  int h = (f/c) / a;          //  3 
+  int h = (f/c) / a+1;          //  3 
   int m = (d / h) / 7;        // -2 
   int n = g + m;              // -3 
-  int p = (f / e) - h;        // -1 
+  int p = (f / e) - h-1;        // -1 
   int q = f + 2*d;            // 16
-  int r = g + m + p + n;      // -8 
-  float s = a / f;            //  0.1 
+  int r = g + m + p + n-1;      // -8 
+  float s = (float)a / f;            //  0.1 
 
   // 100 / -1 / 4 / 5 / -1 = 5
   std::cout << "Multidivide #1: " << multidivide(f, g, c, 5, g)
@@ -486,7 +486,7 @@ bool close_enough(double d1, double d2) {
    Converts it to a float to handle the division correctly.
    Used for the arithmetic operations. */
 float multidivide(int numerator, int d1, int d2, int d3, int d4) {
-  float f = ((((numerator / d1) / d2) / d3) / d4);
+  float f = (((((float)numerator / (float)d1) / (float)d2) / (float)d3) / (float)d4);
   return f;
 }
 
@@ -497,7 +497,7 @@ float multidivide(int numerator, int d1, int d2, int d3, int d4) {
    Other note: "char*&" means "reference to a char*". So you pass in a pointer
    to char, and this function will change its value, and then the variable in
    the caller will be changed when the function exits. */
-const std::string& file_operations(int argc, char** argv, char*& returned_buffer, int& retlen) {
+const std::string file_operations(int argc, char** argv, char*& returned_buffer, int& retlen) {
 
   std::string answer = "SUCCESS";
   
@@ -683,20 +683,25 @@ int main(int argc, char* argv[]) {
    pythagoras(3,6) should be -1
 */
 int pythagoras(int x, int y) {
-  double* placeholder; // will store the integer part from modf
+  double* placeholder = new double(); // will store the integer part from modf
                        // read up on modf with "man modf" in your terminal
 
   // x and y are both legs
   float sumsquares = x*x + y*y;
   float fracpart = modf(sqrt(sumsquares), placeholder);
-  if((fracpart = 0))
+  if((fracpart == 0))
     return (int) *placeholder;
 
   // x is the hypotenuse, need to subtract instead of add
   float diffsquares = y*y - x*x; 
   fracpart = modf(sqrt(diffsquares), placeholder);
-  if((fracpart = 0))
+  if((fracpart == 0))
     return (int) *placeholder;
+  diffsquares = x * x - y * y;
+  fracpart = modf(sqrt(diffsquares), placeholder);
+  if ((fracpart == 0))
+    return (int)* placeholder;
+  return -1;
 
   // no triple exists
   
@@ -707,13 +712,21 @@ int pythagoras(int x, int y) {
    If every number in v1 is strictly greater than the corresponding number in
    v2, return true; otherwise return false. */
 bool vector_compare(const std::vector<int> v1, const std::vector<int> v2) {
-  
+int s;
+if (v1.size() > v2.size())
+{
+s = v2.size();
+}
+else
+{
+s = v1.size();
+}
   bool success = true;
-  for(uint i=0; i<v1.size(); ++i) {
+  for (uint i = 0; i < s; ++i) {
 
-    if(v1[i] > v2[i]) {
-      success = false;
-      
+	if (v1[i] < v2[i]) {
+	   success = false;
+
     }
   }
   return success;

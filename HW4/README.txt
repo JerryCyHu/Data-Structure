@@ -1,6 +1,6 @@
 HOMEWORK 4: DEBUGGING & GROCERY LISTS
 
-NAME:  < insert name >
+NAME:  < Jerry Hu >
 
 
 ESTIMATE OF # OF HOURS SPENT ON THIS ASSIGNMENT:  < insert # hours >
@@ -12,7 +12,7 @@ List the names of everyone you talked to about this assignment
 etc.), and all of the resources (books, online reference
 material, etc.) you consulted in completing this assignment.
 
-< insert collaborators / resources >
+< DiYuan Zhu >
 
 
 Remember: All finding and fixing bugs for this assignment must be done
@@ -34,15 +34,15 @@ a = maximum # of different ingredients added with a single ’a’ command
 w = maximum units of a single ingredient added with a single ’a’ command
 
 
-command 'r' / add a recipe:
+command 'r' / add a recipe: O(k)
 
-command 'a' / add ingredients to the kitchen:
+command 'a' / add ingredients to the kitchen: O(a)
 
-command 'p' / print a recipe:
+command 'p' / print a recipe: O(r*k)
 
-command 'm' / make a recipe:
+command 'm' / make a recipe: O(i*r*k)
 
-command 'k' / print the contents of the kitchen:
+command 'k' / print the contents of the kitchen: O(i)
 
 
 

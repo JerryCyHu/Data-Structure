@@ -1,0 +1,8 @@
+﻿  checkpoint1.cpp
+C:\Users\huc3\Documents\GitHub\Data-Structure\Lab 5\checkpoint1.cpp(9,21): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\huc3\Documents\GitHub\Data-Structure\Lab 5\checkpoint1.cpp(38): message :  see reference to function template instantiation 'void print<int>(std::vector<int,std::allocator<_Ty>> &,const std::string &)' being compiled
+C:\Users\huc3\Documents\GitHub\Data-Structure\Lab 5\checkpoint1.cpp(38): message :         with
+C:\Users\huc3\Documents\GitHub\Data-Structure\Lab 5\checkpoint1.cpp(38): message :         [
+C:\Users\huc3\Documents\GitHub\Data-Structure\Lab 5\checkpoint1.cpp(38): message :             _Ty=int
+C:\Users\huc3\Documents\GitHub\Data-Structure\Lab 5\checkpoint1.cpp(38): message :         ]
+  lab5.vcxproj -> C:\Users\huc3\Documents\GitHub\Data-Structure\Lab 5\lab5\Debug\lab5.exe
