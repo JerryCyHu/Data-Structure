@@ -1,0 +1,15 @@
++---+---+---+---+
+|               |
+| Aaaaaaaaa   B |
+|         a     |
++   +   + a +   +
+|         a     |
+| C   B   #     |
+|         a     |
++   +   + a +   +
+|         a     |
+|     C   aaaaA |
+|               |
++---+---+---+---+
+ 
+Found 1 Path(s) for Color 'A'

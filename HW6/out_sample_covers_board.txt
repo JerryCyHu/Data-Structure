@@ -1,0 +1,17 @@
++---+---+---+---+---+---+
+|                       |
+| bbbbbbbbb   ccccC   A |
+| b       b   c       a |
++ b +   + b + c +   + a +
+| b       b   c       a |
+| b   Cccc#cccc   aaaaa |
+| b       b       a     |
++ b +   + b +   + a +   +
+| b       b       a     |
+| bbbbB   bbbbbbbb#bbbb |
+|                 a   b |
++   +   +   +   + a + b +
+|                 a   b |
+| Aaaaaaaaaaaaaaaaa   B |
+|                       |
++---+---+---+---+---+---+

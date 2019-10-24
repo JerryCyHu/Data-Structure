@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab8Check3/phonebook.cpp
+iostream
+-
+vector
+-
+string
+-
+map
+-
+

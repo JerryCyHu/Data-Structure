@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW6/hw6/Node.h
+string
+-
+vector
+-
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW6/hw6/provided_grid.cpp
+provided_grid.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW6/hw6/provided_grid.h
+cassert
+-
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW6/hw6/provided_grid.h
+fstream
+-
+iostream
+-
+string
+-
+vector
+-
+Node.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW6/hw6/Node.h
+

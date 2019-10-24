@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/huc3/Documents/untitled/essay.h
+string
+-
+essay_iterator.h
+C:/Users/huc3/Documents/untitled/essay_iterator.h
+
+C:/Users/huc3/Documents/untitled/essay_iterator.h
+node.h
+C:/Users/huc3/Documents/untitled/node.h
+
+C:/Users/huc3/Documents/untitled/main.cpp
+string
+-
+iostream
+-
+sstream
+-
+cstdlib
+-
+iomanip
+-
+cassert
+-
+cstdlib
+-
+fstream
+-
+essay.h
+C:/Users/huc3/Documents/untitled/essay.h
+
+C:/Users/huc3/Documents/untitled/node.h
+string
+-
+
