@@ -6,7 +6,6 @@ using namespace std;
 
 // constructor loads the input puzzle board
 Grid::Grid(const std::string &filename) {
-
   std::ifstream istr(filename);
   assert (istr.good());
   
@@ -115,7 +114,7 @@ char Grid::print_center(int i, int j) {
   return center;
 }
 
-void Grid::oneColorHelperUp(vector<Node>& p, Node node) {
+void Grid::oneColorHelperUp(vector<Node>& p, Node& node) {
     node.startY--;
 
     bool onlyGoStraight = false;//crossing a bridge.
@@ -173,18 +172,22 @@ void Grid::oneColorHelperUp(vector<Node>& p, Node node) {
 
     if (onlyGoStraight){
         oneColorHelperUp(p,node);
+        node.startY++;
         p.pop_back();
     } else{
         oneColorHelperUp(p,node);
+        node.startY++;
         p.pop_back();
         oneColorHelperLeft(p,node);
+        node.startX++;
         p.pop_back();
         oneColorHelperRight(p,node);
+        node.startX--;
         p.pop_back();
     }
 
 }
-void Grid::oneColorHelperDown(vector<Node>& p, Node node) {
+void Grid::oneColorHelperDown(vector<Node>& p, Node& node) {
     node.startY++;
 
     bool onlyGoStraight = false;//crossing a bridge.
@@ -242,17 +245,21 @@ void Grid::oneColorHelperDown(vector<Node>& p, Node node) {
 
     if (onlyGoStraight){
         oneColorHelperDown(p,node);
+        node.startY--;
         p.pop_back();
     } else{
         oneColorHelperDown(p,node);
+        node.startY--;
         p.pop_back();
         oneColorHelperLeft(p,node);
+        node.startX++;
         p.pop_back();
         oneColorHelperRight(p,node);
+        node.startX--;
         p.pop_back();
     }
 }
-void Grid::oneColorHelperLeft(vector<Node>& p, Node node) {
+void Grid::oneColorHelperLeft(vector<Node>& p, Node& node) {
 
     node.startX--;
 
@@ -310,17 +317,21 @@ void Grid::oneColorHelperLeft(vector<Node>& p, Node node) {
 
     if (onlyGoStraight){
         oneColorHelperLeft(p,node);
+        node.startX++;
         p.pop_back();
     } else{
         oneColorHelperUp(p,node);
+        node.startY++;
         p.pop_back();
         oneColorHelperDown(p,node);
+        node.startY--;
         p.pop_back();
         oneColorHelperLeft(p,node);
+        node.startX++;
         p.pop_back();
     }
 }
-void Grid::oneColorHelperRight(vector<Node>& p, Node node) {
+void Grid::oneColorHelperRight(vector<Node>& p, Node& node) {
     node.startX++;
 
     bool onlyGoStraight = false;//crossing a bridge.
@@ -378,13 +389,17 @@ void Grid::oneColorHelperRight(vector<Node>& p, Node node) {
 
     if (onlyGoStraight){
         oneColorHelperRight(p,node);
+        node.startX--;
         p.pop_back();
     } else{
         oneColorHelperUp(p,node);
+        node.startY++;
         p.pop_back();
         oneColorHelperDown(p,node);
+        node.startY--;
         p.pop_back();
         oneColorHelperRight(p,node);
+        node.startX--;
         p.pop_back();
     }
 }
@@ -404,12 +419,16 @@ void Grid::one_color_solution(char name){
         Node n = nodeVector[i];
         pathNodes.clear();
         oneColorHelperUp(pathNodes, n);
+        n.startY++;
         pathNodes.clear();
         oneColorHelperDown(pathNodes,n);
+        n.startY--;
         pathNodes.clear();
         oneColorHelperRight(pathNodes,n);
+        n.startX--;
         pathNodes.clear();
         oneColorHelperLeft(pathNodes,n);
+        n.startX++;
         pathNodes.clear();
         //////////////////get all paths, then editing 'targetN'.
         for (int i = 0; i < targetN->paths.size(); ++i) {
@@ -578,12 +597,16 @@ void Grid::getAllNodesAllPaths() {
             Node n = nodeVector[i];
             pathNodes.clear();
             oneColorHelperUp(pathNodes, n);
+            n.startY++;
             pathNodes.clear();
             oneColorHelperDown(pathNodes,n);
+            n.startY--;
             pathNodes.clear();
             oneColorHelperRight(pathNodes,n);
+            n.startX--;
             pathNodes.clear();
             oneColorHelperLeft(pathNodes,n);
+            n.startX++;
             pathNodes.clear();
         }
     }
@@ -615,70 +638,353 @@ void Grid::all_solutions() {
     }
 }
 
-bool Grid::getAllValidStrategies(vector<Node>& occupiedPaths, int currentNodeIndex, int currentPathIndex, int nextPathIndex) {
-    for (int i = 0; i < targetNodes[currentNodeIndex].paths[currentPathIndex].size(); ++i) {
-        occupiedPaths.push_back(targetNodes[currentNodeIndex].paths[currentPathIndex][i]);
-    }
-    if (0<=currentNodeIndex && currentNodeIndex<targetNodes.size()-1) {//see if currentNodeIndex is valid
-        if (nextPathIndex < targetNodes[currentNodeIndex+1].paths.size()) {
-            if (compareTwoPaths(occupiedPaths, targetNodes[currentNodeIndex + 1].paths[nextPathIndex]) ==
-                true) {//two paths are compatible
-                /////////////////////////////////////////
-                if(getAllValidStrategies(occupiedPaths, currentNodeIndex + 1, nextPathIndex, 0) == true){
-                    for (int i = 0; i < targetNodes[currentNodeIndex+1].paths[nextPathIndex].size(); ++i) {
-                        occupiedPaths.pop_back();
-                    }
-                }
-            }
-            for (int i = 0; i < targetNodes[currentNodeIndex].paths[currentPathIndex].size(); ++i) {
-                occupiedPaths.pop_back();
-            }
-            if(getAllValidStrategies(occupiedPaths, currentNodeIndex, currentPathIndex, nextPathIndex + 1) == true) {
+void Grid::getAllValidStrategies(vector<Node>&solutionpathVector, int indexOfNodes) {
+    Node n = targetNodes[indexOfNodes];
+    allSolutionHelperUp(solutionpathVector, n, indexOfNodes);
+    n.startY++;
+    solutionpathVector.pop_back();
+    allSolutionHelperDown(solutionpathVector,n, indexOfNodes);
+    n.startY--;
+    solutionpathVector.pop_back();
+    allSolutionHelperRight(solutionpathVector,n, indexOfNodes);
+    n.startX--;
+    solutionpathVector.pop_back();
+    allSolutionHelperLeft(solutionpathVector,n, indexOfNodes);
+    n.startX++;
+    solutionpathVector.pop_back();
 
-                return true;
-            }
-            return false;
-        } else{
-            for (int i = 0; i < targetNodes[currentNodeIndex].paths[currentPathIndex].size(); ++i) {
-                occupiedPaths.pop_back();
-            }
-            return false;
-        }
-
-    }else if (currentNodeIndex == targetNodes.size()-1){//beyond capability, which means that reaches the destination
-        allSolutionVector.push_back(occupiedPaths);
-        return true;
-    }else{
-        return false;
-    }
 }
 
-bool  Grid::compareTwoPaths(vector<Node>& p1, vector<Node>& p2) {
-    for (int i = 0; i < p1.size(); ++i) {
-        for (int j = 0; j < p2.size(); ++j) {
-            if (p1[i].startX == p2[j].startX) {
-                if (p1[i].startY == p2[j].startY) {
-                    if (!p1[i].onBridge)
-                        return false;
-                }
+void Grid::allSolutionHelperUp(vector<Node>& p, Node& node, int nodeIndex) {
+    node.startY--;
+
+    bool onlyGoStraight = false;//crossing a bridge.
+    if(node.startY < 0) {
+        p.push_back(node);
+        return;
+    }
+    if (node.startX < 0) {
+        p.push_back(node);
+        return;
+    }
+    if (node.startX > width()-1) {
+        p.push_back(node);
+        return;
+    }
+    for (Node& n : p){//if cross itself
+        if (node.startX == n.startX && node.startY == n.startY) {
+            if(!(node.name!=n.name&&n.onBridge == true)){
+                p.push_back(node);
+                return;
             }
         }
     }
-    return true;
+    for (Node& n : nodeVector){
+        if(n.name != '#') {
+            if (node.startX == n.startX && node.startY == n.startY) {
+                p.push_back(node);
+                return;
+            }
+            if (node.startX == n.endX && node.startY == n.endY && node.name != n.name) {
+                p.push_back(node);
+                return;
+            }
+        }
+        if(n.name == '#'){//bridge
+            if (node.startX == n.startX&&node.startY == n.startY){
+                onlyGoStraight = true;
+                node.onBridge = true;
+                break;
+            }
+        }
+    }
+
+    if (node.startX == node.endX && node.startY == node.endY){//got to the destination
+        for (int i = 0; i < nodeVector.size(); ++i) {
+            if (nodeVector[i].name == node.name){
+                nodeVector[i].paths.push_back(p);
+                break;
+            }
+        }
+        if (nodeIndex==targetNodes.size()-1){//the last targetnode
+            allSolutionVector.push_back(p);
+        } else {
+            getAllValidStrategies(p,nodeIndex+1);
+        }
+        p.push_back(node);
+        return;
+    }
+
+    p.push_back(node);
+    node.onBridge = false;
+
+    if (onlyGoStraight){
+        allSolutionHelperUp(p,node,nodeIndex);
+        node.startY++;
+        p.pop_back();
+    } else{
+        allSolutionHelperUp(p,node,nodeIndex);
+        node.startY++;
+        p.pop_back();
+        allSolutionHelperLeft(p,node,nodeIndex);
+        node.startX++;
+        p.pop_back();
+        allSolutionHelperRight(p,node,nodeIndex);
+        node.startX--;
+        p.pop_back();
+    }
+
 }
+void Grid::allSolutionHelperDown(vector<Node>& p, Node& node, int nodeIndex) {
+    node.startY++;
+
+    bool onlyGoStraight = false;//crossing a bridge.
+    if(node.startY > height()-1) {
+        p.push_back(node);
+        return;
+    }
+    if (node.startX < 0) {
+        p.push_back(node);
+        return;
+    }
+    if (node.startX > width()-1) {
+        p.push_back(node);
+        return;
+    }
+    for (Node& n : p){
+        if (node.startX == n.startX && node.startY == n.startY) {
+            if(!(node.name!=n.name&&n.onBridge == true)){
+                p.push_back(node);
+                return;
+            }
+        }
+    }
+    for (Node& n : nodeVector){
+        if(n.name != '#') {
+            if (node.startX == n.startX && node.startY == n.startY) {
+                p.push_back(node);
+                return;
+            }
+            if (node.startX == n.endX && node.startY == n.endY && node.name != n.name) {
+                p.push_back(node);
+                return;
+            }
+        }
+        if(n.name == '#'){//bridge
+            if (node.startX == n.startX&&node.startY == n.startY){
+                onlyGoStraight = true;
+                node.onBridge = true;
+                break;
+            }
+        }
+    }
+
+    if (node.startX == node.endX && node.startY == node.endY){//got to the destination
+        for (int i = 0; i < nodeVector.size(); ++i) {
+            if (nodeVector[i].name == node.name){
+                nodeVector[i].paths.push_back(p);
+                break;
+            }
+        }
+        if (nodeIndex==targetNodes.size()-1){//the last targetnode
+            allSolutionVector.push_back(p);
+        } else {
+            getAllValidStrategies(p,nodeIndex+1);
+        }
+        p.push_back(node);
+        return;
+    }
+
+    p.push_back(node);
+    node.onBridge = false;
+
+    if (onlyGoStraight){
+        allSolutionHelperDown(p,node,nodeIndex);
+        node.startY--;
+        p.pop_back();
+    } else{
+        allSolutionHelperDown(p,node,nodeIndex);
+        node.startY--;
+        p.pop_back();
+        allSolutionHelperLeft(p,node,nodeIndex);
+        node.startX++;
+        p.pop_back();
+        allSolutionHelperRight(p,node,nodeIndex);
+        node.startX--;
+        p.pop_back();
+    }
+}
+void Grid::allSolutionHelperLeft(vector<Node>& p, Node& node, int nodeIndex) {
+
+    node.startX--;
+
+    bool onlyGoStraight = false;//crossing a bridge.
+    if(node.startX < 0) {
+        p.push_back(node);
+        return;
+    }
+    if (node.startY < 0) {
+        p.push_back(node);
+        return;
+    }
+    if (node.startY > height()-1) {
+        p.push_back(node);
+        return;
+    }
+    for (Node& n : p){
+        if (node.startX == n.startX && node.startY == n.startY) {
+            if(!(node.name!=n.name&&n.onBridge == true)){
+                p.push_back(node);
+                return;
+            }
+        }
+    }
+    for (Node& n : nodeVector){
+        if (n.name != '#') {
+            if (node.startX == n.startX && node.startY == n.startY) {
+                p.push_back(node);
+                return;
+            }
+            if (node.startX == n.endX && node.startY == n.endY && node.name != n.name) {
+                p.push_back(node);
+                return;
+            }
+        }
+        if(n.name == '#'){//bridge
+            if (node.startX == n.startX&&node.startY == n.startY){
+                onlyGoStraight = true;
+                node.onBridge = true;
+                break;
+            }
+        }
+    }
+    if (node.startX == node.endX && node.startY == node.endY){//got to the destination
+        for (int i = 0; i < nodeVector.size(); ++i) {
+            if (nodeVector[i].name == node.name){
+                nodeVector[i].paths.push_back(p);
+                break;
+            }
+        }
+        if (nodeIndex==targetNodes.size()-1){//the last targetnode
+            allSolutionVector.push_back(p);
+        } else {
+            getAllValidStrategies(p,nodeIndex+1);
+        }
+        p.push_back(node);
+        return;
+    }
+
+    p.push_back(node);
+    node.onBridge = false;
+
+    if (onlyGoStraight){
+        allSolutionHelperLeft(p,node,nodeIndex);
+        node.startX++;
+        p.pop_back();
+    } else{
+        allSolutionHelperUp(p,node,nodeIndex);
+        node.startY++;
+        p.pop_back();
+        allSolutionHelperDown(p,node,nodeIndex);
+        node.startY--;
+        p.pop_back();
+        allSolutionHelperLeft(p,node,nodeIndex);
+        node.startX++;
+        p.pop_back();
+    }
+}
+void Grid::allSolutionHelperRight(vector<Node>& p, Node& node, int nodeIndex) {
+    node.startX++;
+
+    bool onlyGoStraight = false;//crossing a bridge.
+    if(node.startX > width()-1) {
+        p.push_back(node);
+        return;
+    }
+    if (node.startY < 0) {
+        p.push_back(node);
+        return;
+    }
+    if (node.startY > height()-1) {
+        p.push_back(node);
+        return;
+    }
+    for (Node& n : p){
+        if (node.startX == n.startX && node.startY == n.startY) {
+            if(!(node.name!=n.name&&n.onBridge == true)){
+                p.push_back(node);
+                return;
+            }
+        }
+    }
+    for (Node& n : nodeVector){
+        if(n.name != '#') {
+            if (node.startX == n.startX && node.startY == n.startY) {
+                p.push_back(node);
+                return;
+            }
+            if (node.startX == n.endX && node.startY == n.endY && node.name != n.name) {
+                p.push_back(node);
+                return;
+            }
+        }
+        if(n.name == '#'){//bridge
+            if (node.startX == n.startX&&node.startY == n.startY){
+                onlyGoStraight = true;
+                node.onBridge = true;
+                break;
+            }
+        }
+    }
+
+    if (node.startX == node.endX && node.startY == node.endY){//got to the destination
+        for (int i = 0; i < nodeVector.size(); ++i) {
+            if (nodeVector[i].name == node.name){
+                nodeVector[i].paths.push_back(p);
+                break;
+            }
+        }
+        if (nodeIndex==targetNodes.size()-1){//the last targetnode
+            allSolutionVector.push_back(p);
+        } else {
+            getAllValidStrategies(p,nodeIndex+1);
+        }
+        p.push_back(node);
+        return;
+    }
+
+    p.push_back(node);
+    node.onBridge = false;
+
+    if (onlyGoStraight){
+        allSolutionHelperRight(p,node,nodeIndex);
+        node.startX--;
+        p.pop_back();
+    } else{
+        allSolutionHelperUp(p,node,nodeIndex);
+        node.startY++;
+        p.pop_back();
+        allSolutionHelperDown(p,node,nodeIndex);
+        node.startY--;
+        p.pop_back();
+        allSolutionHelperRight(p,node,nodeIndex);
+        node.startX--;
+        p.pop_back();
+    }
+}
+
 
 void Grid::getSolutionVector() {
-    getAllNodesAllPaths();
     for (int i = 0; i < nodeVector.size(); ++i) {
         if (nodeVector[i].name != '#') {
-            Node n = nodeVector[i];
+            Node&n = nodeVector[i];
             targetNodes.push_back(n);
         }
     }
-    for (int j = 0; j < targetNodes[0].paths.size(); ++j) {
-        occupiedPaths.clear();
-        getAllValidStrategies(occupiedPaths, 0, j, 0);//MOST TIME CONSUMING s is the path point in n. O(s^n).
-    }
+
+    occupiedPaths.clear();
+    getAllValidStrategies(solutionpathVector,0);//MOST TIME CONSUMING s is the path point in n. O(s^n).
+
     for (int i = 0; i < allSolutionVector.size(); ++i) {
         vector<vector<Node>> solution;
         solutionPackedVector.push_back(solution);

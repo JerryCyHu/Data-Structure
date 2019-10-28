@@ -53,21 +53,24 @@ private:
   char print_center(int i, int j);
 
   // a helper for one_color_solution
-  void oneColorHelperUp(vector<Node>& p, Node node);
-  void oneColorHelperDown(vector<Node>& p, Node node);
-  void oneColorHelperLeft(vector<Node>& p, Node node);
-  void oneColorHelperRight(vector<Node>& p, Node node);
+  void oneColorHelperUp(vector<Node>& p, Node& node);
+  void oneColorHelperDown(vector<Node>& p, Node& node);
+  void oneColorHelperLeft(vector<Node>& p, Node& node);
+  void oneColorHelperRight(vector<Node>& p, Node& node);
+
+  // helpers for all_solution
+  void allSolutionHelperUp(vector<Node>& p, Node& node, int nodeIndex);
+  void allSolutionHelperDown(vector<Node>& p, Node& node, int nodeIndex);
+  void allSolutionHelperLeft(vector<Node>& p, Node& node, int nodeIndex);
+  void allSolutionHelperRight(vector<Node>& p, Node& node, int nodeIndex);
 
   //a helper for one_color_solution to construct V, H
   void vhConstructorForOCS(vector<Node>& p, Node* target);
 
   //a helper for getting all valid strategies
-  bool getAllValidStrategies(vector<Node>& occupiedPaths, int currentNodeIndex, int currentPathIndex, int nextPathIndex);
+  void getAllValidStrategies(vector<Node>&solutionpathVector, int indexOfNodes);//indexOfNodes is the node that we are going to find solutions for
   vector<Node> targetNodes;//storing all target nodes
   vector<Node> occupiedPaths;//store all currently "valid" path into this vector
-
-  //a helper to compare two node vector. return true if they are not intersected.
-  bool compareTwoPaths(vector<Node>& p1, vector<Node>& p2);
 
   //helper for all_solution, packed_all_solution and one_solution. Setup all the data
   void getSolutionVector();
@@ -84,8 +87,8 @@ private:
   std::vector<std::string> horizontals;
 
   vector<Node> nodeVector;//store nodes. 'A', 'B' ...etc or '#'(Wall)
-  vector<Node> pathNodes;//helper vector for go helper up down left right
-
+  vector<Node> pathNodes;//a helper vector for helper function up down left right for one_color
+  vector<Node> solutionpathVector;//a helper vector for helper function up down left right for all_solution
   //////////////for all nodes solution//////////
   vector<vector<Node>> allSolutionVector;//It stores all the strategy. The inner vector stores node's path detail. MinUnit: solution
   vector<vector<vector<Node>>> solutionPackedVector;//packed mode of allSolutionVector. MinUnit: target
