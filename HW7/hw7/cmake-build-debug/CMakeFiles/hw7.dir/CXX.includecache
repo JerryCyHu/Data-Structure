@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/main.cpp
+iostream
+-
+map
+-
+cassert
+-
+string
+-
+
