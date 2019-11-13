@@ -122,6 +122,33 @@ hw7/fast:
 	$(MAKE) -f CMakeFiles\hw7.dir\build.make CMakeFiles/hw7.dir/build
 .PHONY : hw7/fast
 
+book.obj: book.cpp.obj
+
+.PHONY : book.obj
+
+# target to build an object file
+book.cpp.obj:
+	$(MAKE) -f CMakeFiles\hw7.dir\build.make CMakeFiles/hw7.dir/book.cpp.obj
+.PHONY : book.cpp.obj
+
+book.i: book.cpp.i
+
+.PHONY : book.i
+
+# target to preprocess a source file
+book.cpp.i:
+	$(MAKE) -f CMakeFiles\hw7.dir\build.make CMakeFiles/hw7.dir/book.cpp.i
+.PHONY : book.cpp.i
+
+book.s: book.cpp.s
+
+.PHONY : book.s
+
+# target to generate assembly for a file
+book.cpp.s:
+	$(MAKE) -f CMakeFiles\hw7.dir\build.make CMakeFiles/hw7.dir/book.cpp.s
+.PHONY : book.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... hw7
 	@echo ... edit_cache
+	@echo ... book.obj
+	@echo ... book.i
+	@echo ... book.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

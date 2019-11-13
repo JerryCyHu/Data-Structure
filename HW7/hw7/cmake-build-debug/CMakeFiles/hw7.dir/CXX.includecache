@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/book.h
+vector
+-
+string
+-
+
 C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/main.cpp
 iostream
 -
@@ -15,4 +21,6 @@ cassert
 -
 string
 -
+book.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/book.h
 

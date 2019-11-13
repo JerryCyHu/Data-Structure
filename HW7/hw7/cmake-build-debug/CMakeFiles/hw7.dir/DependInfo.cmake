@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/book.cpp" "C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/cmake-build-debug/CMakeFiles/hw7.dir/book.cpp.obj"
   "C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/main.cpp" "C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/cmake-build-debug/CMakeFiles/hw7.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

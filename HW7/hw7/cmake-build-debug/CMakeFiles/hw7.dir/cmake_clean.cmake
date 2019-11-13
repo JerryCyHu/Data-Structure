@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hw7.dir/book.cpp.obj"
   "CMakeFiles/hw7.dir/main.cpp.obj"
   "hw7.exe"
   "hw7.exe.manifest"

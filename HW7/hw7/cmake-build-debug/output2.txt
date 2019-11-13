@@ -1,0 +1,12 @@
+added 0 copy of steve_jobs
+added 9 copies of microeconomics
+added 1 copy of sherlock_holmes
+don't have pride_and_prejudice in library
+no copies of steve_jobs available
+bob checked out sherlock_holmes
+no copies of steve_jobs available
+bob has this item checked out:
+  sherlock_holmes
+library info for: steve_jobs
+don't have accelerated_c++ in library!
+don't have harry_potter in library!

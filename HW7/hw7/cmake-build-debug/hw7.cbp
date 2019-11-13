@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/book.cpp">
+			<Option target="hw7"/>
+		</Unit>
+		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/book.h">
+			<Option target="hw7"/>
+		</Unit>
 		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/HW7/hw7/main.cpp">
 			<Option target="hw7"/>
 		</Unit>

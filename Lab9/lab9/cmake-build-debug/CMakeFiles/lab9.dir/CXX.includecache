@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab9/lab9/ds_set.h
+iostream
+-
+utility
+-
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab9/lab9/test_ds_set.cpp
+iostream
+-
+string
+-
+utility
+-
+cassert
+-
+ds_set.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab9/lab9/ds_set.h
+

@@ -1,0 +1,14 @@
+a 0 steve_jobs
+a 9 microeconomics
+a 1 sherlock_holmes
+
+c sally pride_and_prejudice
+c bob steve_jobs
+c bob sherlock_holmes
+c sally steve_jobs
+
+p
+
+l steve_jobs
+l accelerated_c++
+l harry_potter

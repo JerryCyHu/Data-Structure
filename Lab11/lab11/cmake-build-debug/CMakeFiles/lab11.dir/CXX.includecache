@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/main_checkpoint_1_and_2.cpp
+string
+-
+iostream
+-
+sstream
+-
+cassert
+-
+superhero.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/superhero.h
+
