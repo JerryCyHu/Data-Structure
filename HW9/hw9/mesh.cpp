@@ -203,14 +203,6 @@ bool Mesh::Collapse() {
   // ASSIGNMENT: Finish the implementation of this function
   //
 
-    triangles_set copy_tri = triangles;
-//    for (triangles_set::iterator itr = copy_tri.begin(); itr != copy_tri.end(); itr++) {
-//        Triangle *t = *itr;
-//        // remove the 1 or 2 triangles that touch this edge
-//        if (t->HasVertex(a) && t->HasVertex(b)) {
-//            RemoveTriangle(t);
-//        }
-//    }
   set<Triangle*> trA = a->getTriangles();//make a copy of A and B since we are changing them
   set<Triangle*> trB = b->getTriangles();
     for (set<Triangle*>::const_iterator itr  = trA.begin();itr != trA.end(); itr++) {
@@ -222,67 +214,59 @@ bool Mesh::Collapse() {
     }
 
     ////////////////calculateA
-    edges_map copy_edgA = edges;
-    for (edges_map::iterator itr = copy_edgA.begin(); itr != copy_edgA.end(); itr++) {
-        Edge* edg = itr->second;
-        if (edg->getV1() == a || edg->getV2() == a){
-            RemoveEdge(edg->getV1(), edg->getV2());
-        }
+    set<Edge*> edA = a->getEdges();
+    for (set<Edge*>::iterator itr = edA.begin(); itr != edA.end(); itr++) {
+            RemoveEdge((*itr)->getV1(), (*itr)->getV2());
     }
-    triangles_set copy_tri2A = triangles;
-    for (triangles_set::iterator itr = copy_tri2A.begin(); itr != copy_tri2A.end(); itr++) {
+    trA = a->getTriangles();
+    for (set<Triangle*>::iterator itr = trA.begin(); itr != trA.end(); itr++) {
         Triangle *t = *itr;
         // remove the 1 or 2 triangles that touch this edge
-        if (t->HasVertex(a)) {
-            if (t->getVertex(0) == a){
-                Vertex *q = t->getVertex(1);
-                Vertex *p = t->getVertex(2);
-                RemoveTriangle(t);
-                AddTriangle(a,q,p);
-            }else if (t->getVertex(1) == a){
-                Vertex *q = t->getVertex(0);
-                Vertex *p = t->getVertex(2);
-                RemoveTriangle(t);
-                AddTriangle(q,a,p);
-            }else if (t->getVertex(2) == a){
-                Vertex *q = t->getVertex(0);
-                Vertex *p = t->getVertex(1);
-                RemoveTriangle(t);
-                AddTriangle(q,p,a);
-            }
+        if (t->getVertex(0) == a){
+            Vertex *q = t->getVertex(1);
+            Vertex *p = t->getVertex(2);
+            RemoveTriangle(t);
+            AddTriangle(a,q,p);
+        }else if (t->getVertex(1) == a){
+            Vertex *q = t->getVertex(0);
+            Vertex *p = t->getVertex(2);
+            RemoveTriangle(t);
+            AddTriangle(q,a,p);
+        }else if (t->getVertex(2) == a){
+            Vertex *q = t->getVertex(0);
+            Vertex *p = t->getVertex(1);
+            RemoveTriangle(t);
+            AddTriangle(q,p,a);
         }
+
     }
 
     ////////////////calculateB
-    edges_map copy_edg = edges;
-    for (edges_map::iterator itr = copy_edg.begin(); itr != copy_edg.end(); itr++) {
-        Edge* edg = itr->second;
-        if (edg->getV1() == b || edg->getV2() == b){
-            RemoveEdge(edg->getV1(), edg->getV2());
-        }
+    set<Edge*> edB = b->getEdges();
+    for (set<Edge*>::iterator itr = edB.begin(); itr != edB.end(); itr++) {
+        RemoveEdge((*itr)->getV1(), (*itr)->getV2());
     }
-    triangles_set copy_tri2 = triangles;
-    for (triangles_set::iterator itr = copy_tri2.begin(); itr != copy_tri2.end(); itr++) {
+    trB = b->getTriangles();
+    for (set<Triangle*>::iterator itr = trB.begin(); itr != trB.end(); itr++) {
         Triangle *t = *itr;
         // remove the 1 or 2 triangles that touch this edge
-        if (t->HasVertex(b)) {
-            if (t->getVertex(0) == b){
-                Vertex *q = t->getVertex(1);
-                Vertex *p = t->getVertex(2);
-                RemoveTriangle(t);
-                AddTriangle(a,q,p);
-            }else if (t->getVertex(1) == b){
-                Vertex *q = t->getVertex(0);
-                Vertex *p = t->getVertex(2);
-                RemoveTriangle(t);
-                AddTriangle(q,a,p);
-            }else if (t->getVertex(2) == b){
-                Vertex *q = t->getVertex(0);
-                Vertex *p = t->getVertex(1);
-                RemoveTriangle(t);
-                AddTriangle(q,p,a);
-            }
+        if (t->getVertex(0) == b){
+            Vertex *q = t->getVertex(1);
+            Vertex *p = t->getVertex(2);
+            RemoveTriangle(t);
+            AddTriangle(a,q,p);
+        }else if (t->getVertex(1) == b){
+            Vertex *q = t->getVertex(0);
+            Vertex *p = t->getVertex(2);
+            RemoveTriangle(t);
+            AddTriangle(q,a,p);
+        }else if (t->getVertex(2) == b){
+            Vertex *q = t->getVertex(0);
+            Vertex *p = t->getVertex(1);
+            RemoveTriangle(t);
+            AddTriangle(q,p,a);
         }
+
     }
     RemoveVertex(b);
 
