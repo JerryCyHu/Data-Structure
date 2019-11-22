@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.obj"
+  "CMakeFiles/lab11.dir/main.cpp.obj"
   "CMakeFiles/lab11.dir/superhero.cpp.obj"
+  "CMakeFiles/lab11.dir/team.cpp.obj"
   "lab11.exe"
   "lab11.exe.manifest"
   "lab11.pdb"

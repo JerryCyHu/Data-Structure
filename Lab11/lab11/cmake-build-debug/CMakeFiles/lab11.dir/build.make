@@ -56,18 +56,18 @@ include CMakeFiles/lab11.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/lab11.dir/flags.make
 
-CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.obj: CMakeFiles/lab11.dir/flags.make
-CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.obj: ../main_checkpoint_1_and_2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.obj"
-	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\lab11.dir\main_checkpoint_1_and_2.cpp.obj -c C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\main_checkpoint_1_and_2.cpp
+CMakeFiles/lab11.dir/main.cpp.obj: CMakeFiles/lab11.dir/flags.make
+CMakeFiles/lab11.dir/main.cpp.obj: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab11.dir/main.cpp.obj"
+	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\lab11.dir\main.cpp.obj -c C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\main.cpp
 
-CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.i"
-	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\main_checkpoint_1_and_2.cpp > CMakeFiles\lab11.dir\main_checkpoint_1_and_2.cpp.i
+CMakeFiles/lab11.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab11.dir/main.cpp.i"
+	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\main.cpp > CMakeFiles\lab11.dir\main.cpp.i
 
-CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.s"
-	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\main_checkpoint_1_and_2.cpp -o CMakeFiles\lab11.dir\main_checkpoint_1_and_2.cpp.s
+CMakeFiles/lab11.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab11.dir/main.cpp.s"
+	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\main.cpp -o CMakeFiles\lab11.dir\main.cpp.s
 
 CMakeFiles/lab11.dir/superhero.cpp.obj: CMakeFiles/lab11.dir/flags.make
 CMakeFiles/lab11.dir/superhero.cpp.obj: ../superhero.cpp
@@ -82,21 +82,36 @@ CMakeFiles/lab11.dir/superhero.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab11.dir/superhero.cpp.s"
 	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\superhero.cpp -o CMakeFiles\lab11.dir\superhero.cpp.s
 
+CMakeFiles/lab11.dir/team.cpp.obj: CMakeFiles/lab11.dir/flags.make
+CMakeFiles/lab11.dir/team.cpp.obj: ../team.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lab11.dir/team.cpp.obj"
+	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\lab11.dir\team.cpp.obj -c C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\team.cpp
+
+CMakeFiles/lab11.dir/team.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab11.dir/team.cpp.i"
+	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\team.cpp > CMakeFiles\lab11.dir\team.cpp.i
+
+CMakeFiles/lab11.dir/team.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab11.dir/team.cpp.s"
+	C:\PROGRA~2\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\team.cpp -o CMakeFiles\lab11.dir\team.cpp.s
+
 # Object files for target lab11
 lab11_OBJECTS = \
-"CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.obj" \
-"CMakeFiles/lab11.dir/superhero.cpp.obj"
+"CMakeFiles/lab11.dir/main.cpp.obj" \
+"CMakeFiles/lab11.dir/superhero.cpp.obj" \
+"CMakeFiles/lab11.dir/team.cpp.obj"
 
 # External object files for target lab11
 lab11_EXTERNAL_OBJECTS =
 
-lab11.exe: CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.obj
+lab11.exe: CMakeFiles/lab11.dir/main.cpp.obj
 lab11.exe: CMakeFiles/lab11.dir/superhero.cpp.obj
+lab11.exe: CMakeFiles/lab11.dir/team.cpp.obj
 lab11.exe: CMakeFiles/lab11.dir/build.make
 lab11.exe: CMakeFiles/lab11.dir/linklibs.rsp
 lab11.exe: CMakeFiles/lab11.dir/objects1.rsp
 lab11.exe: CMakeFiles/lab11.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lab11.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\huc3\Documents\GitHub\Data-Structure\Lab11\lab11\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable lab11.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\lab11.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -71,6 +71,7 @@ int main() {
   //
   // add your own comparison tests here!
   //
+  assert(h > d); //speed beats laser;
 
   //  */
 

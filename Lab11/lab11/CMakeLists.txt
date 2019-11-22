@@ -3,4 +3,4 @@ project(lab11)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(lab11 main_checkpoint_1_and_2.cpp superhero.cpp superhero.h)
+add_executable(lab11 main.cpp superhero.cpp team.cpp)

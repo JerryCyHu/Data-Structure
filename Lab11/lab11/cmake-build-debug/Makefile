@@ -122,32 +122,32 @@ lab11/fast:
 	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/build
 .PHONY : lab11/fast
 
-main_checkpoint_1_and_2.obj: main_checkpoint_1_and_2.cpp.obj
+main.obj: main.cpp.obj
 
-.PHONY : main_checkpoint_1_and_2.obj
+.PHONY : main.obj
 
 # target to build an object file
-main_checkpoint_1_and_2.cpp.obj:
-	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.obj
-.PHONY : main_checkpoint_1_and_2.cpp.obj
+main.cpp.obj:
+	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-main_checkpoint_1_and_2.i: main_checkpoint_1_and_2.cpp.i
+main.i: main.cpp.i
 
-.PHONY : main_checkpoint_1_and_2.i
+.PHONY : main.i
 
 # target to preprocess a source file
-main_checkpoint_1_and_2.cpp.i:
-	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.i
-.PHONY : main_checkpoint_1_and_2.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main_checkpoint_1_and_2.s: main_checkpoint_1_and_2.cpp.s
+main.s: main.cpp.s
 
-.PHONY : main_checkpoint_1_and_2.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-main_checkpoint_1_and_2.cpp.s:
-	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/main_checkpoint_1_and_2.cpp.s
-.PHONY : main_checkpoint_1_and_2.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 superhero.obj: superhero.cpp.obj
 
@@ -176,6 +176,33 @@ superhero.cpp.s:
 	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/superhero.cpp.s
 .PHONY : superhero.cpp.s
 
+team.obj: team.cpp.obj
+
+.PHONY : team.obj
+
+# target to build an object file
+team.cpp.obj:
+	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/team.cpp.obj
+.PHONY : team.cpp.obj
+
+team.i: team.cpp.i
+
+.PHONY : team.i
+
+# target to preprocess a source file
+team.cpp.i:
+	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/team.cpp.i
+.PHONY : team.cpp.i
+
+team.s: team.cpp.s
+
+.PHONY : team.s
+
+# target to generate assembly for a file
+team.cpp.s:
+	$(MAKE) -f CMakeFiles\lab11.dir\build.make CMakeFiles/lab11.dir/team.cpp.s
+.PHONY : team.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -185,12 +212,15 @@ help:
 	@echo ... lab11
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main_checkpoint_1_and_2.obj
-	@echo ... main_checkpoint_1_and_2.i
-	@echo ... main_checkpoint_1_and_2.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 	@echo ... superhero.obj
 	@echo ... superhero.i
 	@echo ... superhero.s
+	@echo ... team.obj
+	@echo ... team.i
+	@echo ... team.s
 .PHONY : help
 
 

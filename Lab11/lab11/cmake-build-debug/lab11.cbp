@@ -80,13 +80,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/main_checkpoint_1_and_2.cpp">
+		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/main.cpp">
 			<Option target="lab11"/>
 		</Unit>
 		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/superhero.cpp">
 			<Option target="lab11"/>
 		</Unit>
 		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/superhero.h">
+			<Option target="lab11"/>
+		</Unit>
+		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/team.cpp">
+			<Option target="lab11"/>
+		</Unit>
+		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/team.h">
 			<Option target="lab11"/>
 		</Unit>
 		<Unit filename="C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/CMakeLists.txt">

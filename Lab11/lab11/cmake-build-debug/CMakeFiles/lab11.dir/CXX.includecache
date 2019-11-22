@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/main_checkpoint_1_and_2.cpp
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/main.cpp
 string
 -
 iostream
@@ -14,6 +14,24 @@ iostream
 sstream
 -
 cassert
+-
+superhero.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/superhero.h
+team.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/team.h
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/superhero.h
+string
+-
+iostream
+-
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/team.h
+string
+-
+iostream
+-
+list
 -
 superhero.h
 C:/Users/huc3/Documents/GitHub/Data-Structure/Lab11/lab11/superhero.h

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab12/lab12check2/ds_hashset.h
+iostream
+-
+list
+-
+string
+-
+vector
+-
+algorithm
+-
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab12/lab12check2/test_ds_hashset.cpp
+iostream
+-
+string
+-
+utility
+-
+cassert
+-
+ds_hashset.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/Lab12/lab12check2/ds_hashset.h
+
