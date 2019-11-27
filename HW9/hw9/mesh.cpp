@@ -148,7 +148,7 @@ bool Mesh::isLegalCollapse(Edge *e) const {
   for (std::set<Triangle*>::const_iterator itr = a->getTriangles().begin();
        itr != a->getTriangles().end(); itr++) {
     Triangle *t = (*itr);
-    assert (t->HasVertex(a));
+    //assert (t->HasVertex(a));
     before_sum += t->getArea();
     if (!(t->HasVertex(b))) {
       after_sum += t->getAreaAfterReplacement(a,avg);
@@ -158,7 +158,7 @@ bool Mesh::isLegalCollapse(Edge *e) const {
   for (std::set<Triangle*>::const_iterator itr = b->getTriangles().begin();
        itr != b->getTriangles().end(); itr++) {
     Triangle *t = (*itr);
-    assert (t->HasVertex(b));
+    //assert (t->HasVertex(b));
     if (!(t->HasVertex(a))) {
       before_sum += t->getArea();
       after_sum += t->getAreaAfterReplacement(b,avg);
@@ -205,6 +205,7 @@ bool Mesh::Collapse() {
 
   set<Triangle*> trA = a->getTriangles();//make a copy of A and B since we are changing them
   set<Triangle*> trB = b->getTriangles();
+  //delete the triangles that we r going to collapse
     for (set<Triangle*>::const_iterator itr  = trA.begin();itr != trA.end(); itr++) {
         for (set<Triangle*>::const_iterator itr2  = trB.begin();itr2 != trB.end(); itr2++) {
             if ((*itr) == (*itr2)){
@@ -214,33 +215,13 @@ bool Mesh::Collapse() {
     }
 
     ////////////////calculateA
-    set<Edge*> edA = a->getEdges();
-    for (set<Edge*>::iterator itr = edA.begin(); itr != edA.end(); itr++) {
-            RemoveEdge((*itr)->getV1(), (*itr)->getV2());
-    }
-    trA = a->getTriangles();
-    for (set<Triangle*>::iterator itr = trA.begin(); itr != trA.end(); itr++) {
-        Triangle *t = *itr;
-        // remove the 1 or 2 triangles that touch this edge
-        if (t->getVertex(0) == a){
-            Vertex *q = t->getVertex(1);
-            Vertex *p = t->getVertex(2);
-            RemoveTriangle(t);
-            AddTriangle(a,q,p);
-        }else if (t->getVertex(1) == a){
-            Vertex *q = t->getVertex(0);
-            Vertex *p = t->getVertex(2);
-            RemoveTriangle(t);
-            AddTriangle(q,a,p);
-        }else if (t->getVertex(2) == a){
-            Vertex *q = t->getVertex(0);
-            Vertex *p = t->getVertex(1);
-            RemoveTriangle(t);
-            AddTriangle(q,p,a);
-        }
+    set<Edge*> tmpE;
 
+    for(set<Edge*>::const_iterator itr = a->getEdges().begin(); itr != a->getEdges().end(); itr++){
+        CollectEdgesWithVertex((*itr)->getV1(), tmpE);
+        CollectEdgesWithVertex((*itr)->getV2(), tmpE);
     }
-
+    ReCalculateEdges(tmpE);
     ////////////////calculateB
     set<Edge*> edB = b->getEdges();
     for (set<Edge*>::iterator itr = edB.begin(); itr != edB.end(); itr++) {
@@ -249,7 +230,7 @@ bool Mesh::Collapse() {
     trB = b->getTriangles();
     for (set<Triangle*>::iterator itr = trB.begin(); itr != trB.end(); itr++) {
         Triangle *t = *itr;
-        // remove the 1 or 2 triangles that touch this edge
+        // remove triangles that touch this edge
         if (t->getVertex(0) == b){
             Vertex *q = t->getVertex(1);
             Vertex *p = t->getVertex(2);
@@ -362,7 +343,7 @@ void Mesh::AddEdge(Vertex *a_, Vertex *b_) {
         edges_pq.push(ep);
 
   }
-  assert (edges.find(e) != edges.end());
+  //assert (edges.find(e) != edges.end());
 }
 
 void Mesh::RemoveEdge(Vertex *a_, Vertex *b_) {
@@ -393,7 +374,7 @@ void Mesh::RemoveEdge(Vertex *a_, Vertex *b_) {
     delete itr->second;
     edges.erase(itr);
   }
-  assert (edges.find(e) == edges.end());
+  //assert (edges.find(e) == edges.end());
 }
 
 
@@ -479,7 +460,7 @@ Edge* Mesh::FindEdge() const {
       // pick one
       if (legal_edges.size() > 0) {
         int rand = std::rand() % legal_edges.size();
-        assert (rand >= 0 && rand < (int)legal_edges.size());
+        //assert (rand >= 0 && rand < (int)legal_edges.size());
         ((Mesh*)(this))->next_random_edge = legal_edges[rand];
       }
     }
@@ -538,8 +519,8 @@ void Mesh::Check() const {
     for (int i = 0; i < 3; i++) {
       Vertex *v = t->getVertex(i);
       // make sure the triangle is in the list for each of its 3 vertices
-      std::set<Triangle*>::iterator itr3 = v->getTriangles().find(t);
-      assert (itr3 != v->getTriangles().end());
+      //std::set<Triangle*>::iterator itr3 = v->getTriangles().find(t);
+      //assert (itr3 != v->getTriangles().end());
       // make sure the 3 edges are in the edge map
       Vertex *v2 = t->getVertex((i+1)%3);
       std::pair<Vertex*,Vertex*> e;
@@ -548,21 +529,21 @@ void Mesh::Check() const {
       } else {
         e = std::pair<Vertex*,Vertex*>(v2,v);
       }
-      edges_map::const_iterator itr = edges.find(e);
-      assert (itr != edges.end());
+      //edges_map::const_iterator itr = edges.find(e);
+      //assert (itr != edges.end());
     }
   }
 
   // loop over all of the vertices
   for (vertices_set::const_iterator itr = vertices.begin(); 
        itr != vertices.end(); itr++) {
-    Vertex *v = *itr;
+    //Vertex *v = *itr;
     // make sure all triangles listed at this vertex actually have this vertex
-    for (std::set<Triangle*>::const_iterator itr = v->getTriangles().begin();
-         itr != v->getTriangles().end(); itr++) {
-      Triangle *t = *itr;
-      assert (t->HasVertex(v));
-    }
+//    for (std::set<Triangle*>::const_iterator itr = v->getTriangles().begin();
+//         itr != v->getTriangles().end(); itr++) {
+//      Triangle *t = *itr;
+//      assert (t->HasVertex(v));
+//    }
   }
 
   // loop over all of the edges
@@ -577,7 +558,7 @@ void Mesh::Check() const {
     for (std::set<Triangle*>::const_iterator itr2 = v1->getTriangles().begin(); 
          itr2 != v1->getTriangles().end(); itr2++) {
       Triangle *t = *itr2;
-      assert (t->HasVertex(v1));
+      //assert (t->HasVertex(v1));
       if (t->HasVertex(v2)) {
         count++;
       }

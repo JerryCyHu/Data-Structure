@@ -51,7 +51,7 @@ void Vertex::Average(Vertex *v) {
 // each Vertex stores the triangles and edges it touches
 
 void Vertex::AddTriangle(Triangle* t) {
-  assert (t->HasVertex(this));
+  //assert (t->HasVertex(this));
   std::pair<std::set<Triangle*>::iterator,bool> ret = triangles.insert(t);
   assert (ret.second == true);
 }
@@ -63,7 +63,7 @@ void Vertex::AddEdge(Edge* e){
 }
 
 void Vertex::RemoveTriangle(Triangle* t) {
-  assert (t->HasVertex(this));
+  //assert (t->HasVertex(this));
   int ret = triangles.erase(t);
   assert (ret == 1);
 }

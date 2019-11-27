@@ -31,7 +31,7 @@ Triangle::Triangle(Vertex* a, Vertex* b, Vertex* c, Mesh *m) {
   }
   mesh = m;
   // make sure the initial triangle is oriented correctly
-  assert (RightSideUp());
+  //assert (RightSideUp());
 }
 
 // =================================================================
@@ -74,7 +74,7 @@ bool Triangle::RightSideUp() const {
 // If we replace one of the vertices of this triangle with a new
 // coordinate, will the triangle still be upside down?
 bool Triangle::RightSideUpAfterReplacement(Vertex *v, const Point& p) const {
-  assert(HasVertex(v));
+  //assert(HasVertex(v));
   if (pts[0] == v)
     return ::RightSideUp(p,pts[1]->getPoint(),pts[2]->getPoint());
   if (pts[1] == v)

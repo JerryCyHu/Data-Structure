@@ -70,9 +70,31 @@ vector
 map
 -
 
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/triangle.cpp
+cmath
+-
+iostream
+-
+cassert
+-
+triangle.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/triangle.h
+mesh.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/mesh.h
+
 C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/triangle.h
 iostream
 -
+
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/vertex.cpp
+iomanip
+-
+vertex.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/vertex.h
+edge.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/edge.h
+triangle.h
+C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/triangle.h
 
 C:/Users/huc3/Documents/GitHub/Data-Structure/HW9/hw9/vertex.h
 cmath
